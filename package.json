@@ -1,45 +1,71 @@
 {
-  "name": "app-name",
-  "version": "0.1.0",
+  "name": "bach",
+  "version": "1.0.0",
+  "type": "module",
   "private": true,
-  "dependencies": {
-    "@testing-library/dom": "^10.4.0",
-    "@testing-library/jest-dom": "^6.6.3",
-    "@testing-library/react": "^16.2.0",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.5.2",
-    "@types/node": "^16.18.126",
-    "@types/react": "^19.0.10",
-    "@types/react-dom": "^19.0.4",
-    "cytoscape": "^3.31.1",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "react-scripts": "5.0.1",
-    "typescript": "^4.9.5",
-    "web-vitals": "^2.1.4"
-  },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "react-router dev",
+    "dev2": "node ./server.js",
+    "start": "cross-env NODE_ENV=production node ./server.js",
+    "lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "lint:report": "eslint --output-file eslint_report.json --format json --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+    "format": "prettier --write ./app",
+    "check-format": "prettier --check ./app",
+    "typecheck": "react-router typegen && tsc",
+    "build": "cross-env NODE_ENV=production react-router build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@monaco-editor/react": "^4.7.0",
+
+    "monaco-editor": "^0.52.2",
+
+    "react-monaco-editor": "^0.58.0",
+    "@react-router/express": "^7.0.0",
+    "@react-router/fs-routes": "^7.1.1",
+    "@react-router/node": "^7.1.1",
+    "@react-router/serve": "^7.1.1",
+    "@types/jsonwebtoken": "^9.0.6",
+    "@types/react-dom": "^18.3.1",
+    "cross-env": "^7.0.3",
+    "cytoscape": "^3.31.1",
+    "express": "^4.21.1",
+    "flowbite-react-icons": "^1.0.8",
+    "isbot": "^4.4.0",
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
+    "react-router": "^7.0.0",
+    "react-router-dom": "^7.1.1"
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "devDependencies": {
+    "@react-router/dev": "^7.0.0",
+    "@remix-run/eslint-config": "^2.11.2",
+    "@types/eslint": "^9.6.1",
+    "@types/react": "^18.3.5",
+    "@typescript-eslint/eslint-plugin": "^8.4.0",
+    "@typescript-eslint/parser": "^8.4.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-alias": "^1.1.2",
+    "eslint-plugin-import": "^2.30.0",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-react": "^7.35.2",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-simple-import-sort": "^12.1.1",
+    "flowbite": "^2.5.1",
+    "flowbite-react": "^0.10.1",
+    "postcss": "^8.4.44",
+    "prettier-plugin-tailwindcss": "^0.6.6",
+    "remix-flat-routes": "^0.6.5",
+    "tailwindcss": "^3.4.10",
+    "vite": "^5.4.14",
+    "vite-tsconfig-paths": "^5.1.4"
   }
 }
+
+
