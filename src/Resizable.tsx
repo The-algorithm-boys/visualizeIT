@@ -22,7 +22,7 @@ const ScalableBox: React.FC<ScalableBoxProps> = ({ children }) => {
       minWidth={300}
       minHeight={200}
       bounds="window"
-      onDragStop={(e, d) => setPosition({ x: d.x, y: d.y })}
+      disableDragging={true}
       onResizeStop={(e, direction, ref, delta, newPosition) => {
         setSize({
           width: parseInt(ref.style.width),
