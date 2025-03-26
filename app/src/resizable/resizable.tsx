@@ -32,7 +32,7 @@ const ScalableBox: React.FC<ScalableBoxProps> = ({ children }) => {
         disableDragging={true}
         
         onResizeStart={() => {
-          document.body.style.userSelect = 'none';
+          document.body.classList.add('disable-selection');
         }}
         onResize={(e, direction, ref, delta, newPosition) => {
           setSize({
@@ -42,7 +42,7 @@ const ScalableBox: React.FC<ScalableBoxProps> = ({ children }) => {
           setPosition(newPosition);
         }}  
         onResizeStop={() => {
-          document.body.style.userSelect = 'auto';
+          document.body.classList.remove('disable-selection');
         }}
         enableResizing={{
           top: true,
@@ -57,9 +57,7 @@ const ScalableBox: React.FC<ScalableBoxProps> = ({ children }) => {
         style={{
           border: "1px solid #ccc",
           background: "#fff",
-          boxSizing: "border-box",
           overflow: "hidden",
-          boxShadow: "0 2px 10px rgba(0,0,0,0.15)",
         }}
       >
         <div
