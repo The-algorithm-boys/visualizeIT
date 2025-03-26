@@ -1,5 +1,8 @@
 import { useState, lazy, Suspense } from "react";
-const Editor = lazy(() => import("@monaco-editor/react"));
+const Editor = lazy(() =>
+  import("@monaco-editor/react").then(module => ({ default: module.Editor }))
+);
+
 
 const graphData = {
     nodes: ['a', 'b', 'c', 'd', 'e'],

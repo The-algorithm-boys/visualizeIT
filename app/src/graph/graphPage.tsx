@@ -4,8 +4,7 @@ import CircleGraph from './circleGraph';
 import BreadthfirstGraph from './breadthfirstGraph';
 import RandomGraph from './randomGraph';
 import EditorPage from '~/src/editor/editorPage';
-import LogTracer from '~/src/tracer/tracer.tsx';
-import ResizableBox from '~/src/resizable/resizable.tsx';
+import LogTracer from '~/src/tracer/tracer';
 
 export default function GraphPage() {
     const [selectedGraph, setSelectedGraph] = useState('Graph 1');
@@ -41,9 +40,7 @@ export default function GraphPage() {
                 </div>
 
                 <div className="flex-1 basis-2/3">
-                    <ResizableBox>
                         {renderGraph()}
-                    </ResizableBox>
                 </div>
 
                 <div className="flex-1 basis-1/3 border-t border-gray-200 overflow-y-auto">
@@ -52,9 +49,7 @@ export default function GraphPage() {
             </div>
 
             <div className="flex-1">
-                <ResizableBox>
                     <EditorPage />
-                </ResizableBox>
             </div>
         </div>
     );
