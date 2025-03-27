@@ -23,8 +23,8 @@ export default function GraphPage() {
     }
 
     return (
-        <div className="flex h-screen -mt-20 pt-20">
-            <div className="flex-1 flex flex-col border-r border-gray-200">
+        <div className="flex h-screen -mt-20 pt-20 dark:text-white">
+            <div className="flex-1 flex flex-col m-4">
                 <div className="p-4">
                     <Dropdown label={selectedGraph}>
                         <Dropdown.Item onClick={() => setSelectedGraph('Graph 1')}>
@@ -38,18 +38,19 @@ export default function GraphPage() {
                         </Dropdown.Item>
                     </Dropdown>
                 </div>
-
-                <div className="flex-1 basis-2/3">
+                <div className="flex-1 mb-4">
+                    <div className="h-full rounded-lg bg-white shadow dark:bg-gray-800">
                         {renderGraph()}
+                    </div>
                 </div>
-
-                <div className="flex-1 basis-1/3 border-t border-gray-200 overflow-y-auto">
-                    <LogTracer />
+                <div className="mb-4">
+                    <div className="rounded-lg bg-white p-4 shadow dark:bg-gray-800 sm:p-6 xl:p-8">
+                        <LogTracer />
+                    </div>
                 </div>
             </div>
-
             <div className="flex-1">
-                    <EditorPage />
+                <EditorPage />
             </div>
         </div>
     );

@@ -12,7 +12,7 @@ export default function LogTracer() {
     }, []);
 
     return (
-        <div className="p-2 h-full overflow-y-auto bg-gray-50">
+        <div>
             <h4 className="font-bold mb-2">Log Tracer</h4>
             {logs.map((log, index) => (
                 <p key={index} className="text-sm font-mono">

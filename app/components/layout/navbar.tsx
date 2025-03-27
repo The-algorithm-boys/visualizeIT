@@ -64,7 +64,7 @@ const NavbarComponent: FC = () => {
                                 </g>
                             </svg>
 
-                            <span className="text-xl font-bold">AlogBoys</span>
+                            <span className="text-xl font-bold dark:text-white">AlgoBoys</span>
                         </Navbar.Brand>
                     </div>
                     <div className="flex items-center lg:gap-3">

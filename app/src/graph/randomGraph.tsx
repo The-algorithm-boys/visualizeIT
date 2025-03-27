@@ -19,7 +19,7 @@ export default function Graph() {
         { data: { id: 'bc', source: 'b', target: 'c', weight: 1 } },
         { data: { id: 'cd', source: 'c', target: 'd', weight: 1 } },
         { data: { id: 'de', source: 'd', target: 'e', weight: 1 } },
-        { data: { id: 'ea', source: 'e', target: 'a', weight: 1 } },
+        { data: { id: 'ea', source: 'e', target: 'a', weight: 10 } },
         { data: { id: 'ac', source: 'a', target: 'c', weight: 2 } },
       ],
       style: [
@@ -88,7 +88,7 @@ export default function Graph() {
   return (
       <div
           ref={cyRef}
-          className="w-full h-full bg-white"
+          className="w-full h-full rounded-lg bg-white shadow dark:bg-gray-800"
       />
   );
 };

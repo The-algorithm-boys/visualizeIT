@@ -4,6 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
+
+button {
+    --tw-ring-shadow: 0 0 #000 !important;
+    box-shadow: none;
+}
 /* chart styles */
 .apexcharts-tooltip {
     @apply rounded-lg border-0 bg-white text-gray-500 shadow-lg dark:bg-gray-700 dark:text-gray-400 !important;
