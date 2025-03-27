@@ -2,7 +2,7 @@
 import classNames from 'classnames'
 import { Sidebar } from 'flowbite-react'
 import type { FC } from 'react'
-import { useEffect, useState } from 'react'
+import {useLocation} from 'react-router'
 import { HiHome } from 'react-icons/hi'
 import { BiLogoGraphql } from "react-icons/bi";
 import { useSidebarContext } from '~/contexts/SidebarContext'
@@ -12,13 +12,8 @@ const SidebarComponent: FC = function () {
     const { isOpenOnSmallScreens: isSidebarOpenOnSmallScreens } =
         useSidebarContext()
 
-    const [currentPage, setCurrentPage] = useState('')
-
-    useEffect(() => {
-        const newPage = window.location.pathname
-
-        setCurrentPage(newPage)
-    }, [setCurrentPage])
+    const location = useLocation(); 
+    const currentPage = location.pathname;
 
     return (
         <div
@@ -48,7 +43,7 @@ const SidebarComponent: FC = function () {
                                 href="/graph"
                                 icon={BiLogoGraphql}
                                 className={
-                                    '/customers' === currentPage
+                                    '/graph' === currentPage
                                         ? 'bg-gray-100 dark:bg-gray-700'
                                         : ''
                                 }
