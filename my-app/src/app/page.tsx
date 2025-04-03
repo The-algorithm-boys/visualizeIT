@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Layout from "@/components/Layout";
+import LogTracer from "@/components/LogTracer/Tracer";
+import DefaultGraph from "@/components/Graph/CircleGraph"
 
 export default function Home() {
   return (
@@ -9,8 +11,12 @@ export default function Home() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
         <div className="flex flex-col gap-4">
-          <div className="bg-white p-6 shadow-md rounded-md">Graph</div>
-          <div className="bg-white p-6 shadow-md rounded-md">Log tracer</div>
+          <div className="bg-white p-6 shadow-md rounded-md h-72 w-full">
+            <DefaultGraph/>
+          </div>
+          <div className="bg-white p-6 shadow-md rounded-md">
+            <LogTracer/>
+          </div>  
         </div>
         <div className="bg-white p-6 shadow-md rounded-md">
           <TabBox />
