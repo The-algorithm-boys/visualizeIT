@@ -88,7 +88,7 @@ export default function Graph() {
   return (
       <div
           ref={cyRef}
-          className="w-full h-full rounded-lg bg-white shadow dark:bg-gray-800"
+          className="w-full h-full bg-white"
       />
   );
 };

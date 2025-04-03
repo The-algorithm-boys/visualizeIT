@@ -21,24 +21,20 @@ export default function GraphPage() {
     }
 
     return (
-        <div className="flex-1 flex flex-col m-4">
-            <div className="p-4">
-                <Dropdown label={selectedGraph}>
-                    <DropdownItem onClick={() => setSelectedGraph('Graph 1')}>
-                        Graph 1
-                    </DropdownItem>
-                    <DropdownItem onClick={() => setSelectedGraph('Graph 2')}>
-                        Graph 2
-                    </DropdownItem>
-                    <DropdownItem onClick={() => setSelectedGraph('Graph 3')}>
-                        Graph 3
-                    </DropdownItem>
-                </Dropdown>
-            </div>
-            <div className="flex-1 mb-4">
-                <div className="h-full rounded-lg bg-white shadow dark:bg-gray-800">
-                    {renderGraph()}
-                </div>
+        <div className="flex flex-col items-center gap-6 h-full w-full">
+            <Dropdown label={selectedGraph}>
+                <DropdownItem onClick={() => setSelectedGraph('Graph 1')}>
+                    Graph 1
+                </DropdownItem>
+                <DropdownItem onClick={() => setSelectedGraph('Graph 2')}>
+                    Graph 2
+                </DropdownItem>
+                <DropdownItem onClick={() => setSelectedGraph('Graph 3')}>
+                    Graph 3
+                </DropdownItem>
+            </Dropdown>
+            <div className="flex-grow bg-white h-full w-full">
+                {renderGraph()}
             </div>
         </div>
     );

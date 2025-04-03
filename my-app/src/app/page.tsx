@@ -1,7 +1,7 @@
 "use client";
 
 import LogTracer from "@/components/LogTracer/Tracer";
-import GraphPage from "@/components/Graph/GraphPage"
+import GraphPage from "@/components/Graph/GraphPage";
 import EditorPage from "@/components/EditorPage/EditorPage";
 
 export default function Home() {
@@ -15,9 +15,10 @@ export default function Home() {
       <main className="flex-grow container mx-auto p-6">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
           <div className="flex flex-col gap-4">
-            <div className="bg-white p-6 shadow-md rounded-md h-72 w-full">
+            <div className="bg-white p-6 shadow-md rounded-md flex-grow w-full h-[30rem]">
               <GraphPage />
             </div>
+
             <div className="bg-white p-6 shadow-md rounded-md">
               <LogTracer />
             </div>
@@ -25,7 +26,8 @@ export default function Home() {
           <div className="bg-white p-6 shadow-md rounded-md">
             <EditorPage />
           </div>
-        </div></main>
+        </div>
+      </main>
       <footer className="bg-white shadow-md p-4 text-center">
         Footer
       </footer>
