@@ -1,19 +1,19 @@
 import { useState, lazy, Suspense } from "react";
 
 const Editor = lazy(() =>
-    import("@monaco-editor/react").then(module => ({ default: module.Editor }))
+  import("@monaco-editor/react").then(module => ({ default: module.Editor }))
 );
 
 const graphData = {
-    nodes: ['a', 'b', 'c', 'd', 'e'],
-    edges: [
-        { source: 'a', target: 'b', weight: 1 },
-        { source: 'b', target: 'c', weight: 1 },
-        { source: 'c', target: 'd', weight: 1 },
-        { source: 'd', target: 'e', weight: 1 },
-        { source: 'e', target: 'a', weight: 10 },
-        { source: 'a', target: 'c', weight: 2 },
-    ]
+  nodes: ['a', 'b', 'c', 'd', 'e'],
+  edges: [
+    { source: 'a', target: 'b', weight: 1 },
+    { source: 'b', target: 'c', weight: 1 },
+    { source: 'c', target: 'd', weight: 1 },
+    { source: 'd', target: 'e', weight: 1 },
+    { source: 'e', target: 'a', weight: 10 },
+    { source: 'a', target: 'c', weight: 2 },
+  ]
 };
 
 const defaultCode = `
@@ -80,23 +80,23 @@ console.log("Shortest path computed:", path);
 `;
 
 export default function CodeEditor() {
-    const [code, setCode] = useState(defaultCode);
+  const [code, setCode] = useState(defaultCode);
 
 
-return (
+  return (
     <div className="flex flex-col h-full">
-        <div className="flex-1 relative">
-            <Suspense fallback={<div>Loading Editor...</div>}>
-                <Editor
-                    height="750px"
-                    defaultLanguage="javascript"
-                    theme="vs-dark"
-                    value={code}
-                    onChange={(value) => setCode(value || "")}
-                    options={{ fontSize: 16 }}
-                />
-            </Suspense>
-        </div>
+      <div className="flex-1 relative">
+        <Suspense fallback={<div>Loading Editor...</div>}>
+          <Editor
+            height="750px"
+            defaultLanguage="javascript"
+            theme="vs-dark"
+            value={code}
+            onChange={(value) => setCode(value || "")}
+            options={{ fontSize: 16 }}
+          />
+        </Suspense>
+      </div>
     </div>
-)
+  )
 }
