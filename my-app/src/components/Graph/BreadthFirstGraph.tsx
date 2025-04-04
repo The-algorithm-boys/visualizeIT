@@ -55,6 +55,16 @@ export default function Graph() {
             'transition-duration': 0.5,
           },
         },
+        {
+          selector: '.visited',
+          style: {
+            'background-color': '#FF0000',
+            'line-color': '#FF0000',
+            'target-arrow-color': '#FF0000',
+            'transition-property': 'background-color, line-color, target-arrow-color',
+            'transition-duration': 0.5,
+          }
+        }
       ],
       layout: {
         name: 'breadthfirst',
@@ -79,6 +89,7 @@ export default function Graph() {
         edge.addClass('highlighted');
       }
     };
+
 
     return () => {
       cy.destroy();

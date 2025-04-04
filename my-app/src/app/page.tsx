@@ -5,6 +5,7 @@ import GraphPage from "@/components/Graph/GraphPage";
 import EditorPage from "@/components/EditorPage/EditorPage";
 import MovieButtons from "@/components/MovieButtons/MovieButtons"
 import { CodeProvider } from "@/components/Contexts/CodeContext";
+import { VisualizationProvider } from "@/components/Contexts/VisualizationContext";
 
 export default function Home() {
   
@@ -16,26 +17,28 @@ export default function Home() {
         </nav>
       </header>
       <main className="flex-grow container mx-auto p-6">
-      <CodeProvider>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
-          <div className="flex flex-col gap-4">
-            
-              <div className="bg-white p-6 shadow-md rounded-md flex-grow w-full h-[30rem]">
-                <GraphPage />
-              </div>
+      <VisualizationProvider>
+        <CodeProvider>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
+            <div className="flex flex-col gap-4">
+              
+                <div className="bg-white p-6 shadow-md rounded-md flex-grow w-full h-[30rem]">
+                  <GraphPage />
+                </div>
 
-              <div className="bg-white p-6 shadow-md rounded-md">
-                <LogTracer />
+                <div className="bg-white p-6 shadow-md rounded-md">
+                  <LogTracer />
+                </div>
               </div>
+            <div className="bg-white p-6 shadow-md rounded-md">
+              <EditorPage />
             </div>
-          <div className="bg-white p-6 shadow-md rounded-md">
-            <EditorPage />
           </div>
-        </div>
-        <div>
-          <MovieButtons counter={0}/>
-        </div>
-        </CodeProvider>
+          <div>
+            <MovieButtons/>
+          </div>
+          </CodeProvider>
+        </VisualizationProvider>
       </main>
       <footer className="bg-white shadow-md p-4 text-center">
         Footer

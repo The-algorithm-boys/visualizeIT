@@ -10,15 +10,13 @@ import {
 
 import { useCode } from "@/components/Contexts/CodeContext"
 
+import { useVisualization } from "@/components/Contexts/VisualizationContext";
+
 
 type MovieButtonsProps = {
     icon: React.ReactNode;
     onClick: () => void;
   };
-
-type MovieControlProps = {
-    counter: number;
-};
 
   const MovieButtons: React.FC<MovieButtonsProps> = ({ icon, onClick }) => (
   <button
@@ -29,14 +27,12 @@ type MovieControlProps = {
   </button>
 );
 
-export default function MediaControls({
-    counter
-}:MovieControlProps) {
+export default function MediaControls() {
   const { code } = useCode();
-  let isPlaying = false;
+  const { isPlaying, setIsPlaying, steps, setSteps } = useVisualization();
 
   const runCode = () => {
-    isPlaying = true;
+    setIsPlaying(true);
     try {
         const originalLog = console.log;
         const func = new Function(code);
@@ -49,11 +45,11 @@ export default function MediaControls({
   
   return (
     <div className="flex gap-3">
-      <MovieButtons icon={<FaStepBackward />} onClick={() => counter = 0} />
-      <MovieButtons icon={<FaBackward />} onClick={() => counter--} />
+      <MovieButtons icon={<FaStepBackward />} onClick={() => setSteps(0)} />
+      <MovieButtons icon={<FaBackward />} onClick={() => setSteps(steps-1)} />
       <MovieButtons icon={<FaPlay />} onClick={runCode} />
-      <MovieButtons icon={<FaPause />} onClick={() => isPlaying = false} />
-      <MovieButtons icon={<FaForward />} onClick={() => counter++} />
+      <MovieButtons icon={<FaPause />} onClick={() => setIsPlaying(false)} />
+      <MovieButtons icon={<FaForward />} onClick={() => setSteps(steps+1)} />
       <MovieButtons icon={<FaStepForward />} onClick={() => console.log('End')} />
     </div>
   );
