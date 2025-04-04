@@ -1,5 +1,5 @@
 import { lazy, Suspense } from "react";
-import { useCode } from "@/components/Contexts/CodeContext"
+import { useCode } from "@/Contexts/CodeContext"
 
 const Editor = lazy(() =>
   import("@monaco-editor/react").then(module => ({ default: module.Editor }))
@@ -13,15 +13,16 @@ export default function CodeEditor() {
 
   return (
     <div className="flex flex-col h-full">
-      <div className="flex-1 relative">
+      <div className="">
         <Suspense fallback={<div>Loading Editor...</div>}>
           <Editor
             height="750px"
+            className={"text-sm"}
             defaultLanguage="javascript"
             theme="vs-dark"
             value={code}
             onChange={(value) => setCode(value || "")}
-            options={{ fontSize: 16 }}
+            options={{ fontSize: 12 }}
           />
         </Suspense>
       </div>

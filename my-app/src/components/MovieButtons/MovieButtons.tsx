@@ -8,9 +8,9 @@ import {
   FaStepForward,
 } from 'react-icons/fa';
 
-import { useCode } from "@/components/Contexts/CodeContext"
+import { useCode } from "@/Contexts/CodeContext"
 
-import { useVisualization } from "@/components/Contexts/VisualizationContext";
+import { useVisualization } from "@/Contexts/VisualizationContext";
 
 
 type MovieButtonsProps = {
