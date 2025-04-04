@@ -21,7 +21,7 @@ export default function GraphPage() {
     }
 
     return (
-        <div className="flex flex-col items-center gap-6 h-full w-full">
+        <div className="flex flex-col items-center gap-6 h-full w-full overflow-hidden">
             <Dropdown label={selectedGraph}>
                 <DropdownItem onClick={() => setSelectedGraph('Graph 1')}>
                     Graph 1

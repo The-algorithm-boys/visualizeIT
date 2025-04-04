@@ -8,8 +8,14 @@ export default function LogTracer() {
             setLogs(prevLogs => [...prevLogs, message]);
         };
 
+        (window as any).removeLog = () => {
+            setLogs([]);
+          };
+
         setLogs([]);
     }, []);
+
+    
 
     return (
         <div>
